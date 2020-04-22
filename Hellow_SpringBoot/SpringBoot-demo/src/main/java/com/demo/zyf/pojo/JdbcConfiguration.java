@@ -24,5 +24,8 @@ public class JdbcConfiguration {
         dataSource.setPassword(this.jdbcProperties.getPassword());
         return dataSource;
     }
-
+    public void test(){
+        int i = 0;
+        i += 10;
+    }
 }

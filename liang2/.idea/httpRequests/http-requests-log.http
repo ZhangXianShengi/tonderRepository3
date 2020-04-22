@@ -1,0 +1,10 @@
+GET http://localhost:8081/spu/page
+
+<> 2020-02-27T114136.200.json
+
+###
+
+GET http://localhost:8081/category/bid/{bid}
+
+###
+

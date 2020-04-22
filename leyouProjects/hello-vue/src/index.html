@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+<script src="js/login.js"></script>
+<script src="js/register.js"></script>
+<body>
+<div id="app">
+    <!--router-link来指定跳转的路径-->
+    <span><router-link to="/login">登录</router-link></span>
+    <span><router-link to="/register">注册</router-link></span>
+    <hr/>
+    <div>
+        <!--vue-router的锚点-->
+        <router-view></router-view>
+    </div>
+</div>
+<script type="text/javascript">
+    // 创建VueRouter对象
+    const router = new VueRouter({
+        routes:[// 编写多个路由规则
+            {
+                path:'/login',// 请求路径
+                component:loginForm //组件名称
+            },
+            {
+                path:'/register',
+                component:registerForm
+            }
+        ]
+    });
+
+    let pp = new Vue({
+        el:"#app",
+        /*components:{// 引用登录和注册组件
+            loginForm,
+            registerForm
+        },*/
+        router // 引用上面定义的router对象
+    });
+</script>
+</body>
+</html>

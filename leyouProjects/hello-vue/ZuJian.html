@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ab :app1="num" @bbb="bb"></ab>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    //第一个参数是组件名   第二个参数是组件实例的对象
+    //定义全局组件
+    Vue.component("ab",{
+        template:"<button @click='bbbb'>点我加1,{{app1}}</button>",
+        props:{// 通过props来接收父组件传递来的属性
+            app1:{
+                type:Number,
+                default:0,
+                readable:true
+            }
+        },
+        methods:{
+            bbbb: function () {
+                this.$emit("bbb")
+            }
+        }
+    })
+
+    const app=new Vue({
+        el:"#app",
+        data:{
+            num:0
+        },
+        methods:{
+            bb: function () {
+                this.num++;
+            }
+        }
+    });
+</script>
+</body>
+</html>

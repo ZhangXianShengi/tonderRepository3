@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ab></ab>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    //定义局部组件
+    let hello={
+        template:"<button @click='num++'>点我加1,{{num}}</button>",
+        data:function(){
+            return{
+                num:0
+            }
+        }
+    }
+
+    const app=new Vue({
+        el:"#app",
+        components:{
+            ab:hello
+        }
+
+    });
+</script>
+</body>
+</html>

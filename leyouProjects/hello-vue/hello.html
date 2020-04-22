@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .a{
+       background: blue;
+    }
+</style>
+<body>
+
+<script src="node_modules/vue/dist/vue.js"></script>
+
+<div id="ap">
+    <h1>{{birth1()}}</h1>
+
+    <input type="text" v-model="message"><br>
+
+    <input type="text" v-model="bbb">
+    <input type="button" value="加入购物车" :class="{a:bbb>0}">
+
+    <hr>
+    <input type="button" value="点我生成随机数" @click="random=Math.random">{{random}}<br>
+    <span v-if="random>0.75">大于0.75</span>
+    <span v-else-if="random>0.5">大于0.5,小于0.75</span>
+    <span v-else-if="random>0.2">大于0.2,小于0.5</span>
+    <span v-else>不符合</span>
+
+    <hr>
+    <button @click="bb=!bb">点我切换</button><br>
+    <h1 v-if="bb">你好</h1>
+
+    <ul>
+        <li v-for="(val,key,index) in userAll">{{index}}--{{key}}--{{val}}</li>
+    </ul>
+    <hr>
+    <ul>
+        <li v-if="user.gender=='女'" v-for="(user,index) in users">{{index}}--{{user.name}}--{{user.gender}}--{{user.age}}</li>
+    </ul>
+    <hr>
+    <input type="checkbox" value="java" v-model="app1">java
+    <input type="checkbox" value="js" v-model="app1">js
+    <h1>{{app1.join(",")}}</h1>
+
+    <input type="text" v-model="num" @keyup.enter="app2"/>
+    <!--<input type="button" value="点我加1" @contextMenu.prevent="app" />-->
+    <input type="button" value="点我加1" @click="app" />
+    <!--<h1>大家好！我是{{name}},有{{num}}位小迷妹</h1>-->
+    <!--<h1>大家好！我是<span v-text="name"></span>,有{{num}}位小迷妹</h1>-->
+    <h1>大家好！我是<span v-html="name"></span>,有{{num}}位小迷妹</h1>
+</div>
+
+<script>
+
+
+    let app=new Vue({
+        el:"#ap",
+        data:{
+            name:"<p style='color: blue'>东坑</p>",
+            num:1,
+            app1:[],
+            users:[
+                {name:'柳岩', gender:'女', age: 21},
+                {name:'虎哥', gender:'男', age: 30},
+                {name:'范冰冰', gender:'女', age: 24},
+                {name:'刘亦菲', gender:'女', age: 18},
+                {name:'古力娜扎', gender:'女', age: 25}
+            ],
+            userAll:{name:'柳岩', gender:'女', age: 21},
+            bb:"true",
+            random:0,
+            bbb:"",
+            birthday:1529032123201 ,// 毫秒值
+            message:""
+        },
+        methods:{
+            app:function(){
+                this.num++;
+            },
+            app2:function(){
+                console.log("登陆成功!")
+            },
+            birth1:function(){
+                return this.birth;
+            }
+        },
+        //计算的属性
+        computed:{
+            birth: function () {// 计算属性本质是一个方法，但是必须返回结果
+                let data=new Date(this.birthday);
+                return data.getFullYear()+"年"+data.getMonth()+"月"+data.getDay()+"日";
+            }
+        },
+        //监听
+        watch:{
+            message: function (newVal, nolVal) {
+                console.log(newVal, nolVal);
+            }
+        },
+        //钩子函数
+        created:function(){
+            this.num = 100;
+            console.log(this);
+        }
+    });
+</script>
+</body>
+</html>

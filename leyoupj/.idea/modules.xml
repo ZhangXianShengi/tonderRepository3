@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/leyou-parent/.mvn/.mvn.iml" filepath="$PROJECT_DIR$/leyou-parent/.mvn/.mvn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leyou-registry/src/main/main.iml" filepath="$PROJECT_DIR$/leyou-registry/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leyou-gateway/src/main/main1.iml" filepath="$PROJECT_DIR$/leyou-gateway/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leyou-parent/src/main/main2.iml" filepath="$PROJECT_DIR$/leyou-parent/src/main/main2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leyou-item-service/src/main/main3.iml" filepath="$PROJECT_DIR$/leyou-item-service/src/main/main3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leyou-item-interface/src/main/java/main4.iml" filepath="$PROJECT_DIR$/leyou-item-interface/src/main/java/main4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leyou-parent/src/test/test.iml" filepath="$PROJECT_DIR$/leyou-parent/src/test/test.iml" />
+    </modules>
+  </component>
+</project>

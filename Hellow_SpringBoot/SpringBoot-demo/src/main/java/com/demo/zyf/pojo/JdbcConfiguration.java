@@ -24,6 +24,7 @@ public class JdbcConfiguration {
         dataSource.setPassword(this.jdbcProperties.getPassword());
         return dataSource;
     }
+    //test使用idea中使用git
     public void test(){
         int i = 0;
         i += 10;
